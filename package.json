@@ -1,0 +1,35 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "you have discovered all my secrets",
+  "main": "main.js",
+  "scripts": {
+    "clean": "echo => 'cleaning files' && rm -rf ./dist && mkdir dist && mkdir dist/images",
+    "autoprefix": "echo => 'adding vendor prefixes to css' && postcss -u autoprefixer -r dist/css/*",
+    "build:dist": "if [ ! -d dist ]; then mkdir dist; fi",
+    "build:images": "if [ ! -d dist/images ]; then mkdir dist/images; fi",
+    "build:css": "echo '=> building css' && node-sass --output-style compressed app/styles -o dist/",
+    "build:js": "echo '=> building js' && browserify -t babelify --presets [ es2015 ] app/scripts/*.js -o dist/bundle.js",
+    "build:html": "echo '=>build html' && cp app/index.html dist/index.html",
+    "build": "npm run build:html -s && npm run build:css -s && npm run build:js -s",
+    "watch:html": "onchange 'app/index.html' -- npm run build:html",
+    "watch:css": "onchange 'app/styles/*.scss' -- npm run build:css",
+    "watch:js": "onchange 'app/scripts/*.js' -- npm run build:js",
+    "serve": "echo '=> server running' && browser-sync start --server 'dist' --files 'dist'",
+    "watch": "echo '=> watching html & css' && npm-run-all -p serve watch:css watch:js watch:html",
+    "all": "npm run clean && npm run build && npm run watch"
+  },
+  "author": "me!",
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.13.0",
+    "browserify": "^13.0.1",
+    "node-sass": "^3.8.0",
+    "npm-run-all": "^2.3.0",
+    "onchange": "^2.5.0"
+  },
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}

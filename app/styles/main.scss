@@ -1,0 +1,11 @@
+// strip margin and padding from everything
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// make sure I'm linked correctly
+body {
+  background-color: pink;
+  font-family: sans-serif;
+}
