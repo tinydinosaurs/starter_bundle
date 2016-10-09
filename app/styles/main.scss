@@ -1,11 +1,21 @@
+// ***************************************** //
+//    replace with your own fancy styles:    //
+// ***************************************** //
+
 // strip margin and padding from everything
 * {
   margin: 0;
   padding: 0;
 }
 
+// lobotomized owl for nice horizontal spacing of elements.
+* + * {
+  margin-top: 1rem;
+}
+
 // make sure I'm linked correctly
 body {
   background-color: pink;
   font-family: sans-serif;
+  padding: 0 3rem;
 }

@@ -1,6 +1,6 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
+  "name": "simple-build",
+  "version": "1.0.1",
   "description": "you have discovered all my secrets",
   "main": "main.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "watch:js": "onchange 'app/scripts/*.js' -- npm run build:js",
     "serve": "echo '=> server running' && browser-sync start --server 'dist' --files 'dist'",
     "watch": "echo '=> watching html & css' && npm-run-all -p serve watch:css watch:js watch:html",
-    "all": "npm run clean && npm run build && npm run watch"
+    "start": "npm run clean && npm run build && npm run watch"
   },
   "author": "me!",
   "license": "ISC",
