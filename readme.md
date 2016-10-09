@@ -15,6 +15,7 @@ After fiddling around with Gulp builds, I decided to try my hand at npm scripts.
 * Run npm install to grab all the node modules
 * Install your own dependencies
 * Set up a nice repo for yourself using the the service of your choice
+* `npm run start` to start the server and watch for changes
 
 Currently not set up for linting or testing or really doing anything other than building simple javascript applications. It also probably has a few bugs. Really, I'm just storing it here for myself, but if you accidentally stumble across this repo, feel free to take it and use it as you please. If you do take it and like it, please star it for me!
 
